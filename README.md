@@ -1,5 +1,5 @@
 # Dominos
-Simulates Cardinal's Mexico Train Domino Game. For rules on this version of dominos see here: <a href="https://www.mastersofgames.com/rules/mexican-train-dominoes-rules.htm"/>
+Simulates Cardinal's Mexico Train Domino Game. For rules on this version of dominos see [here](https://www.mastersofgames.com/rules/mexican-train-dominoes-rules.htm)
 
 ## Usage
 Sample initiation code to simulate a game is shown below:
