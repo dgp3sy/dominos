@@ -36,6 +36,10 @@ public class Bot {
                     }
                 }
             }
+            if (train.get(i).matches(starter)) {
+                hasConnection=true;
+                g.addEdge(train.get(i), starter, true);
+            }
             if (!hasConnection) {
                 g.addVertex(train.get(i));
             }
@@ -45,7 +49,7 @@ public class Bot {
         return g;
     }
     public void buildTrain(Domino starter) {
-        Graph<Domino> g = convertToGraph(train, starter);
+        Graph<Domino> g = convertToGraph(this.hand, starter);
         Domino next = starter;
         Stack<Domino> s = new Stack<Domino>();
         s.push(next);
@@ -55,10 +59,17 @@ public class Bot {
         /* Build Train from the Starter */
         while (!s.empty()) {
             next = s.pop();
-            if (!next.discovered) {
-                next.discovered = true;
+            if (!next.hasVisited()) {
+                next.visit();
+                System.out.println(next.toString() + " ");
 
                 // For each edge in domino : push domino onto stack
+                for (Domino edge : g.getEdge(next)) {
+                    if (!edge.hasVisited()) {
+                        s.push(edge);
+                    }
+
+                }
 
             }
 

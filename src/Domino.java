@@ -5,7 +5,7 @@
 public class Domino {
     private int first;
     private int second;
-    public boolean discovered; // Used for Depth first search
+    private boolean discovered; // Used for Depth first search
 
     /** Constructs a domino with the given two numbers on its two faces. */
     public Domino(int first, int second) {
@@ -25,7 +25,15 @@ public class Domino {
     public int second() {
         return second;
     }
-
+    public void visit() {
+        this.discovered=true;
+    }
+    public void unvisit() {
+        this.discovered=false;
+    }
+    public boolean hasVisited() {
+        return this.discovered;
+    }
     /** Reverses the first and second number on this domino. */
     public void flip() {
         int temp = first;

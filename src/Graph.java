@@ -52,6 +52,9 @@ public class Graph<T> {
     public boolean hasEdge(T s, T d) {
         return map.get(s).contains(d);
     }
+    public List<T> getEdge(T s) {
+        return map.get(s);
+    }
 
     // Prints the adjancency list of each vertex.
     @Override

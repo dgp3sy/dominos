@@ -8,8 +8,8 @@ public class Game {
     public ArrayList<Domino> mexicoTrain;
     public Domino center;
 
-    public Game(int numPlayers, ArrayList<Bot> playerList) {
-        this.numPlayers = numPlayers;
+    public Game(ArrayList<Bot> playerList) {
+        this.numPlayers = playerList.size();
         this.playerList = playerList;
     }
     public boolean allPlayersHaveDominoes() {
